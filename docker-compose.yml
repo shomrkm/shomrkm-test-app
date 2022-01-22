@@ -5,9 +5,11 @@ services:
     container_name: shomrkm-app
     build: .
     tty: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
     working_dir: /usr/src/app
     ports:
-      - 8080:3000
+      - 3000:3000
     volumes:
       - .:/usr/src/app:cached
       - node_modules:/usr/src/app/node_modules
