@@ -1,5 +1,5 @@
 import React from 'react';
 
 export const Dashboard = () => {
-  return <h1>Welcome to Shomrkm App!</h1>;
+  return <h1 className="text-4xl">Welcome to Shomrkm!</h1>;
 };
