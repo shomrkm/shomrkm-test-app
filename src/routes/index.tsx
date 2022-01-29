@@ -6,6 +6,7 @@ import { Dashboard, NotFound } from '../features/misc';
 export const AppRoutes = () => {
   const element = useRoutes([
     { path: '/', element: <Dashboard /> },
+    { path: 'dashboard', element: <Dashboard /> },
     { path: 'map', element: <Map /> },
     { path: '*', element: <NotFound /> },
   ]);

@@ -4,7 +4,9 @@ import OLMap from 'ol/Map';
 import OSM from 'ol/source/OSM';
 import View from 'ol/View';
 import React, { useEffect, useRef } from 'react';
+
 import 'ol/ol.css';
+import { MainLayout } from '@/components';
 
 export const Map: React.FC = () => {
   const mapRef = useRef<any>(null);
@@ -20,9 +22,11 @@ export const Map: React.FC = () => {
   }, []);
 
   return (
-    <div className="h-screen w-screen flex flex-col">
-      <div className="text-4xl p-4">Here is Map Application Page</div>
-      <div className="flex-1" ref={mapRef} />
-    </div>
+    <MainLayout>
+      <div className="flex flex-col flex-1 h-screen">
+        <div className="text-2xl p-4">Map</div>
+        <div className="flex-1" ref={mapRef} />
+      </div>
+    </MainLayout>
   );
 };
