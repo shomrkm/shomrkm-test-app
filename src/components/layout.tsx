@@ -8,7 +8,7 @@ type Props = {
 
 export const MainLayout: React.VFC<Props> = ({ children }: Props) => {
   return (
-    <div className="h-screen w-screen flex">
+    <div className="flex w-screen h-screen">
       <Sidebar />
       <div className="flex-1">{children}</div>
     </div>

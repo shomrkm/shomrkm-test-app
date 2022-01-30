@@ -5,7 +5,7 @@ module.exports = {
     es6: true,
   },
   parserOptions: { ecmaVersion: 8, sourceType: 'module' },
-  ignorePatterns: ['node_modules/*'],
+  ignorePatterns: ['node_modules/*', 'tailwind.config.js'],
   extends: ['eslint:recommended'],
   overrides: [
     {
@@ -34,6 +34,7 @@ module.exports = {
         'plugin:prettier/recommended',
         'plugin:testing-library/react',
         'plugin:jest-dom/recommended',
+        'plugin:tailwindcss/recommended',
       ],
       rules: {
         'linebreak-style': ['error', 'unix'],

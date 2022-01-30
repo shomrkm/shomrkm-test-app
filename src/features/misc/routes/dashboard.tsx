@@ -5,8 +5,8 @@ import { MainLayout } from '@/components';
 export const Dashboard = () => {
   return (
     <MainLayout>
-      <h1 className="text-2xl p-4">Dashboard</h1>
-      <div className="text-base pl-2">Welcome to our application</div>
+      <h1 className="p-4 text-2xl">Dashboard</h1>
+      <div className="pl-2 text-base">Welcome to our application.</div>
     </MainLayout>
   );
 };
