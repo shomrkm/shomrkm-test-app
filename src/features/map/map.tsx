@@ -23,8 +23,7 @@ export const Map: React.FC = () => {
 
   return (
     <MainLayout>
-      <div className="flex flex-col flex-1 h-screen">
-        <div className="p-4 text-2xl">Map</div>
+      <div className="flex flex-col flex-1 h-(screen-map)">
         <div className="flex-1" ref={mapRef} />
       </div>
     </MainLayout>
