@@ -1,5 +1,5 @@
 import { Dialog, Transition } from '@headlessui/react';
-import { HomeIcon, MapIcon, XIcon } from '@heroicons/react/outline';
+import { HomeIcon, MapIcon, DocumentTextIcon, XIcon } from '@heroicons/react/outline';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ const SideNavigation = () => {
   const navigation = [
     { name: 'Dashbard', to: '/dashboard', icon: HomeIcon },
     { name: 'Map', to: '/map', icon: MapIcon },
-    { name: 'Sandbox', to: '/sandbox', icon: MapIcon },
+    { name: 'Todos', to: '/todos', icon: DocumentTextIcon },
   ] as SideNavigationItem[];
 
   return (
