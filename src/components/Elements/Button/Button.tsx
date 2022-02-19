@@ -36,7 +36,7 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
       <button
         ref={ref}
         type={type}
-        className={`flex justify-center border border-gray-300 disabled:opacity-70 disabled:cursor-not-allowed rouded-md shadow-sm font-medium focus:outline-none ${variants[variant]} ${sizes[size]}} ${className}`}
+        className={`flex justify-center border border-gray-300 disabled:opacity-70 disabled:cursor-not-allowed rounded-md shadow-sm font-medium focus:outline-none ${variants[variant]} ${sizes[size]}} ${className}`}
         {...props}
       >
         {isLoading && <Spinner size="sm" className="text-current" />}
