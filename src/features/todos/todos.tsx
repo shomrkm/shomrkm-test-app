@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { MainLayout, Spinner, Form, Button } from '@/components';
+import { Spinner, Form, Button } from '@/components';
 import { InputField } from '@/components/Form/InputField';
 
 import { useTodos } from './api/getTodos';
@@ -19,19 +19,15 @@ export const Todos = () => {
   };
 
   if (todosQuery.isLoading) {
-    return (
-      <MainLayout>
-        <Spinner size="lg" className="m-4" />
-      </MainLayout>
-    );
+    return <Spinner size="lg" className="m-4" />;
   }
 
   if (!todosQuery.data) {
-    return <MainLayout>No Todos</MainLayout>;
+    return <div>No Todos</div>;
   }
 
   return (
-    <MainLayout>
+    <>
       <h1 className="p-4 text-2xl">Your tasks</h1>
       <div className="flex flex-col justify-start ml-8">
         <Form<FilterValue>
@@ -56,6 +52,6 @@ export const Todos = () => {
           <li key={todo.id}>{todo.title}</li>
         ))}
       </div>
-    </MainLayout>
+    </>
   );
 };

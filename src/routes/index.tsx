@@ -1,16 +1,31 @@
-import { useRoutes } from 'react-router-dom';
+import { Outlet, useRoutes } from 'react-router-dom';
 
+import { MainLayout } from '@/components';
 import { Map } from '@/features/map';
 import { Dashboard, NotFound } from '@/features/misc';
 import { Todos } from '@/features/todos';
 
+const App = () => {
+  return (
+    <MainLayout>
+      <Outlet />
+    </MainLayout>
+  );
+};
+
 export const AppRoutes = () => {
   const element = useRoutes([
-    { path: '/', element: <Dashboard /> },
-    { path: 'dashboard', element: <Dashboard /> },
-    { path: 'map', element: <Map /> },
-    { path: 'todos', element: <Todos /> },
-    { path: '*', element: <NotFound /> },
+    {
+      path: '/',
+      element: <App />,
+      children: [
+        { path: '/dashboard', element: <Dashboard /> },
+        { path: '/map', element: <Map /> },
+        { path: '/todos', element: <Todos /> },
+        { path: '/', element: <Dashboard /> },
+        { path: '*', element: <NotFound /> },
+      ],
+    },
   ]);
 
   return element;

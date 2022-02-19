@@ -6,7 +6,6 @@ import View from 'ol/View';
 import React, { useEffect, useRef } from 'react';
 
 import 'ol/ol.css';
-import { MainLayout } from '@/components';
 
 export const Map: React.FC = () => {
   const mapRef = useRef<any>(null);
@@ -22,10 +21,8 @@ export const Map: React.FC = () => {
   }, []);
 
   return (
-    <MainLayout>
-      <div className="flex flex-col flex-1 h-(screen-map)">
-        <div className="flex-1" ref={mapRef} />
-      </div>
-    </MainLayout>
+    <div className="flex flex-col flex-1 h-(screen-map)">
+      <div className="flex-1" ref={mapRef} />
+    </div>
   );
 };
