@@ -1,12 +1,13 @@
-import axios from 'axios';
 import { useQuery } from 'react-query';
+
+import { axios } from '@/lib/axios';
 
 import { Todo } from '../types';
 
 export const getTodos = async (userId: number): Promise<Todo[]> => {
-  const response = await axios.get('https://jsonplaceholder.typicode.com/todos');
-  if (userId === 0) return response.data;
-  const filtered = response.data.filter((todo: Todo) => todo.userId == userId);
+  const data: Todo[] = await axios.get('todos');
+  if (userId === 0) return data;
+  const filtered = data.filter((todo: Todo) => todo.userId == userId);
   return filtered;
 };
 
