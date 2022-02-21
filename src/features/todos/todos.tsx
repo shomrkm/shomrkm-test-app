@@ -26,6 +26,8 @@ export const Todos = () => {
     return <div>No Todos</div>;
   }
 
+  const defaultValues = userId === 0 ? {} : { userId: `${userId}` };
+
   return (
     <>
       <h1 className="p-4 text-2xl">Your tasks</h1>
@@ -34,6 +36,7 @@ export const Todos = () => {
           onSubmit={onSubmit}
           id="user-id"
           className="flex gap-x-2 mb-4 align-bottom"
+          options={{ defaultValues }}
         >
           {({ register, formState }) => (
             <>
