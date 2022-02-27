@@ -14,7 +14,7 @@
     "bradlc.vscode-tailwindcss",
     "stylelint.vscode-stylelint"
   ],
-  "postCreateCommand": "yarn install",
+  // "postCreateCommand": "yarn build",
   "workspaceFolder": "/usr/src/app",
   "shutdownAction": "stopCompose"
 }
