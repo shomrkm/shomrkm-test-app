@@ -28,7 +28,7 @@ const SideNavigation = () => {
           className="group flex items-center p-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 rounded-md"
         >
           <item.icon
-            className="shrink-0 mr-4 w-6 h-6 text-gray-400 group-hover:text-gray-300"
+            className="flex-shrink-0 mr-4 w-6 h-6 text-gray-400 group-hover:text-gray-300"
             aria-hidden="true"
           />
           {item.name}
@@ -40,10 +40,10 @@ const SideNavigation = () => {
 
 export const Sidebar = () => {
   return (
-    <div className="hidden md:flex md:shrink-0">
+    <div className="hidden md:flex md:flex-shrink-0">
       <div className="flex flex-col w-64">
         <div className="flex flex-col flex-1 h-0">
-          <div className="flex shrink-0 items-center px-4 h-16 bg-gray-900">
+          <div className="flex flex-shrink-0 items-center px-4 h-16 bg-gray-900">
             <Logo />
           </div>
           <div className="flex overflow-y-auto flex-col flex-1">
@@ -68,7 +68,7 @@ export const MobileSidebar: React.VFC<MobileSidebarProps> = ({ sidebarOpen, setS
       <Dialog
         as="div"
         static
-        className="flex fixed inset-0 z-40 md:hidden"
+        className="flex md:hidden fixed inset-0 z-40"
         open={sidebarOpen}
         onClose={setSidebarOpen}
       >
@@ -104,7 +104,7 @@ export const MobileSidebar: React.VFC<MobileSidebarProps> = ({ sidebarOpen, setS
             >
               <div className="absolute top-0 right-0 pt-2 -mr-12">
                 <button
-                  className="flex justify-center items-center ml-1 w-10 h-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                  className="flex justify-center items-center ml-1 w-10 h-10 rounded-full focus:ring-2 focus:ring-inset focus:ring-white focus:outline-none"
                   onClick={() => setSidebarOpen(false)}
                 >
                   <span className="sr-only">Close sidebar</span>
@@ -112,7 +112,7 @@ export const MobileSidebar: React.VFC<MobileSidebarProps> = ({ sidebarOpen, setS
                 </button>
               </div>
             </Transition.Child>
-            <div className="flex shrink-0 items-center px-4">
+            <div className="flex flex-shrink-0 items-center px-4">
               <Logo />
             </div>
             <div className="overflow-y-auto flex-1 mt-5 h-0">

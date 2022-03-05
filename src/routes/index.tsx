@@ -1,6 +1,6 @@
 import { Outlet, useRoutes } from 'react-router-dom';
 
-import { MainLayout } from '@/components';
+import { MainLayout } from '@/components/Layout';
 import { Map } from '@/features/map';
 import { Dashboard, NotFound } from '@/features/misc';
 import { Todos } from '@/features/todos';

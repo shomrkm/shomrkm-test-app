@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
-import { Spinner, Form, Button } from '@/components';
-import { InputField } from '@/components/Form/InputField';
+import { Spinner, Button } from '@/components/Elements';
+import { Form, InputField } from '@/components/Form';
+import { useNotificationStore } from '@/stores/notifications';
 
 import { useTodos } from './api/getTodos';
 import { Todo } from './types';
@@ -13,9 +14,11 @@ type FilterValue = {
 export const Todos = () => {
   const [userId, setUserId] = useState<number>(0);
   const todosQuery = useTodos(userId);
+  const { addNotification } = useNotificationStore();
 
   const onSubmit = (values: FilterValue) => {
     setUserId(Number(values.userId));
+    addNotification({ type: 'info', title: 'Searching tasks completed.' });
   };
 
   if (todosQuery.isLoading) {
