@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react';
 import { Button, Props } from './Button';
 
 const meta: Meta = {
-  title: 'Components/Element/Button',
+  title: 'Components/Elements/Button',
   parameters: {
     controls: { expand: true },
   },
