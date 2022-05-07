@@ -1,6 +1,7 @@
+import { CheckIcon } from '@heroicons/react/outline';
 import { useState } from 'react';
 
-import { Spinner, Button } from '@/components/Elements';
+import { Spinner, Button, Table } from '@/components/Elements';
 import { Form, InputField } from '@/components/Form';
 import { useNotificationStore } from '@/stores/notifications';
 
@@ -54,9 +55,30 @@ export const Todos = () => {
             </>
           )}
         </Form>
-        {todosQuery.data?.map((todo: Todo) => (
-          <li key={todo.id}>{todo.title}</li>
-        ))}
+        <Table<Todo>
+          data={todosQuery.data}
+          columns={[
+            {
+              title: 'ID',
+              field: 'id',
+            },
+            {
+              title: 'User ID',
+              field: 'userId',
+            },
+            {
+              title: 'Title',
+              field: 'title',
+            },
+            {
+              title: 'Completed',
+              field: 'completed',
+              Cell({ entry: { completed } }) {
+                return completed ? <CheckIcon className="w-4 h-4" /> : <></>;
+              },
+            },
+          ]}
+        />
       </div>
     </>
   );
