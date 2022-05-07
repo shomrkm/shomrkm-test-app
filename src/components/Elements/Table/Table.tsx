@@ -7,13 +7,12 @@ type TableColumn<Entry> = {
   Cell?({ entry }: { entry: Entry }): React.ReactElement;
 };
 
-export type Props<Entry> = {
+export type TableProps<Entry> = {
   data: Entry[];
   columns: TableColumn<Entry>[];
 };
 
-export const Table = <Entry extends { id: string }>({ data, columns }: Props<Entry>) => {
-  console.log('Table');
+export const Table = <Entry extends { id: string }>({ data, columns }: TableProps<Entry>) => {
   if (!data.length) {
     return (
       <div className="flex flex-col justify-center items-center h-80 text-gray-500 bg-white">

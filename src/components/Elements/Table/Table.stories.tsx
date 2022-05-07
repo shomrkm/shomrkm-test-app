@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 
-import { Table, Props } from './Table';
+import { Table, TableProps } from './Table';
 
 const meta: Meta = {
   title: 'Components/Elements/Table',
@@ -37,7 +37,7 @@ const data: User[] = [
   },
 ];
 
-const Template: Story<Props<User>> = (props) => <Table<User> {...props} />;
+const Template: Story<TableProps<User>> = (props) => <Table<User> {...props} />;
 
 export const Default = Template.bind({});
 Default.args = {

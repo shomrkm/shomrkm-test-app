@@ -14,13 +14,13 @@ const sizes = {
   lg: 'py-3 px-8 text-lg',
 };
 
-export type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: keyof typeof variants;
   size?: keyof typeof sizes;
   isLoading?: boolean;
 };
 
-export const Button = React.forwardRef<HTMLButtonElement, Props>(
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       type = 'button',
